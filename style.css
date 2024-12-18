@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-.container {
-    outline: 1px solid red; /* чтобы контейнер был виден, в конце можно будет удалить это св-во */
+.container {    
     margin: 0 auto;
     padding-inline: 150px;
     width: 100%;
@@ -67,14 +66,23 @@ header span {
 
 .about-section {
     background-color: #fff;
-    padding: 100px 0;
 }
 
 .about-section .wrapper {
     /* 📍 Свойствa flexbox для отступов между элементами select, .info-wrapper и .skills-wrapper  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 60px;
+    padding-top: 100px;
 }
 
 select {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.21071;
+    color: #303030;
     border: 1px solid rgba(48, 48, 48, 0.3);
     border-radius: 5px;
     width: 150px;
@@ -82,7 +90,7 @@ select {
     font-weight: 400;
     font-size: 16px;
     appearance: none; 
-    background-image: url("./ep_arrow-down.svg");
+    background-image: url("./arrow-down.svg");
     background-repeat: no-repeat;
     background-position: right 12px top 50%;
 }
@@ -90,11 +98,14 @@ select {
 select:hover,
 .text-field:hover {
     /* 📍 Стили для выпадающего списка и текстового поля при наведении курсора */
+    border: none;
+    border: 1px solid #2965f1;
+    cursor: pointer;
 }
-
 
 .info-wrapper {
     /* 📍 Свойство flexbox для расположения 2-х списков в ряд */
+    display: flex;
 }
 
 .section-title {
@@ -111,21 +122,30 @@ select:hover,
 .frameworks-list,
 .books-list {
     /* 📍 Свойства flexbox для отступов между элементами в списках */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .frameworks-list {
+    list-style: none;
+    list-style-image: url(./solar_map-arrow-up-bold.svg);
     font-weight: 400;
     font-size: 16px;
-    list-style-image: url(./solar_map-arrow-up-bold.svg);
     padding-left: 20px;
 }
 
 .skills-block {
     /* 📍 Свойства flexbox для расположения формы над элементами с классом .label */
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .skills {
     /* 📍 Свойства flexbox для расположения элементов с классом .label */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .books-list {
@@ -141,6 +161,8 @@ select:hover,
 
 form {
     margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
 }
 
 .text-field {
@@ -168,6 +190,8 @@ form {
 
 .btn:hover {
     /* 📍 Стили для кнопки при наведении курсора */
+    cursor: pointer;
+    background-color: rgba(41, 101, 241, 0.9);
 }
 
 .line {
@@ -179,7 +203,7 @@ table {
     border-collapse: collapse;
     font-weight: 400;
     font-size: 14px;
-    margin: 0 auto;
+    margin: 60px auto 98px;
 }
 
 th, td {
@@ -190,6 +214,7 @@ footer {
     background-color: rgba(163, 167, 255, 0.3);
     padding: 26px 0;
     /* 📍 Свойство для расположения ссылки горизонтально по центру */
+    text-align: center;
 }
 
 .footer-link {
@@ -201,4 +226,5 @@ footer {
 
 .footer-link:hover {
     /* 📍 Стили для ссылки при наведении курсора */
+    text-decoration: underline;
 }
